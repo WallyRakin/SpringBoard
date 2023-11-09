@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{tag.name}}{% endblock %}
+
+{% block content %}
+<h1>{{tag.name}}</h1>
+
+<ul>
+    {% for post in tag.posts %}
+    <li>
+        <a href="/posts/{{ post.id }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<a href="/tags">Back</a>
+<a href="{{ url_for('edit_tag', tag_id=tag.id) }}">Edit</a>
+<a href="{{ url_for('delete_tag', tag_id=tag.id) }}">Delete</a>
+{% endblock %}

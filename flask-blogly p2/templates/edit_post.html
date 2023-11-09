@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Post</h2>
+
+<form action="/posts/{{ post.id }}/edit" method="post">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" class="form-control" value="{{ post.title }}" required>
+    </div>
+    <div class="form-group">
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" class="form-control" rows="5" required>{{ post.content }}</textarea>
+    </div>
+
+    <fieldset>
+        <legend>Tags:</legend>
+        {% for tag in tags %}
+        <div>
+            <label>
+                <input type="checkbox" name="tags" value="{{ tag.id }}" {% if tag in post.tags %}checked{% endif %}>
+                {{ tag.name }}
+            </label>
+        </div>
+        {% endfor %}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Update Post</button>
+</form>
+{% endblock %}
