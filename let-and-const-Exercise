@@ -1,0 +1,7 @@
+Difference between var and let: var is globally or function scoped and can be redeclared. In contrast, let is limited to block scope (like within a loop or if-statement) and can also be redeclared within the same scope.
+
+Difference between var and const: var allows variables to be updated and redeclared within its scope. const, however, is block-scoped, but once assigned, its value cannot be changed or redeclared.
+
+Difference between let and const: Both are block-scoped, but let allows changing the value of the variable, while const does not.
+
+What is hoisting? Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope before the code execution begins. This means variables and functions can be used before they are actually written in the code.
