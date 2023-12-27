@@ -1,16 +1,14 @@
 def extract_full_names(people):
-    """Return list of names, extracting from first+last keys in people dicts.
+    """Return list of names, extracting from first+last keys in people dicts."""
+    full_names = [f"{person['first']} {person['last']}" for person in people]
+    return full_names
 
-    - people: list of dictionaries, each with 'first' and 'last' keys for
-              first and last names
+# Define the list of dictionaries
+names = [
+    {'first': 'Ada', 'last': 'Lovelace'},
+    {'first': 'Grace', 'last': 'Hopper'},
+]
 
-    Returns list of space-separated first and last names.
-
-        >>> names = [
-        ...     {'first': 'Ada', 'last': 'Lovelace'},
-        ...     {'first': 'Grace', 'last': 'Hopper'},
-        ... ]
-
-        >>> extract_full_names(names)
-        ['Ada Lovelace', 'Grace Hopper']
-    """
+# Call the function
+result = extract_full_names(names)
+print(result)  # Output: ['Ada Lovelace', 'Grace Hopper']

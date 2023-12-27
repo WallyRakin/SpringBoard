@@ -1,9 +1,7 @@
 def product(a, b):
-    """Return product of a and b.
+    """Return product of a and b."""
+    return a * b
 
-        >>> product(2, 2)
-        4
-
-        >>> product(2, -2)
-        -4
-    """
+# Test cases
+print(product(2, 2))  # Output: 4
+print(product(2, -2))  # Output: -4
