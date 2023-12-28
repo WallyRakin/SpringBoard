@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 const ExpressError = require("./expressError")
 
-const approuter = require('./routes/approuter')
+const appRouter = require('./routes/approuter')
 const companiesRouter = require('./routes/companies')
 const invoicesRouter = require('./routes/invoices')
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use('/companies', companiesRouter)
 app.use('/invoices', invoicesRouter)
-app.use('/', approuter)
+app.use('/', appRouter)
 
 
 
