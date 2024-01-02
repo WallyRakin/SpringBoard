@@ -80,7 +80,7 @@ class Customer {
   }
 
   fullName() {
-    return `${this.firstName} ${this.lastName}`
+    return `${this.firstName} ${this.lastName}`;
   }
 
 
