@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Job Update",
+    "description": "A schema for validating job update data",
+    "type": "object",
+    "properties": {
+        "title": {
+            "description": "The title of the job",
+            "type": "string"
+        },
+        "salary": {
+            "description": "The salary for the job",
+            "type": "number",
+            "minimum": 0
+        },
+        "equity": {
+            "description": "The equity offered for the job",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        }
+    },
+    "additionalProperties": false
+}
