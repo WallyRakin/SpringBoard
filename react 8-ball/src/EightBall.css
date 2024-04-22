@@ -1,0 +1,27 @@
+/* EightBall.css */
+.eightBall {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+    /* Smooth transition for color change */
+}
+
+/* Ensuring text is visible on dark backgrounds */
+.eightBall.black {
+    color: white;
+}
+
+.eightBall:not(.black) {
+    color: black;
+}
