@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movies App</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            padding: 20px;
+        }
+
+        #movies-list div {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movies App</h1>
+        <!-- Movie Submission Form -->
+        <form id="movie-form" class="mb-4">
+            <div class="form-group">
+                <label for="title">Movie Title:</label>
+                <input type="text" id="title" class="form-control" placeholder="Enter movie title" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <input type="number" id="rating" class="form-control" placeholder="Enter rating" min="1" max="10"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Add Movie</button>
+        </form>
+
+        <!-- Container for Displaying Movies -->
+        <div id="movies-list">
+            <!-- Movie entries will be appended here -->
+        </div>
+    </div>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 1. Console log when DOM is ready
+            console.log("Let’s get ready to party with jQuery!");
+
+            // 2. Add class to images inside article
+            $('article img').addClass('image-center');
+
+            // 3. Remove the last paragraph in the article
+            $('article p:last').remove();
+
+            // 4. Set random font size for the title
+            const randomSize = Math.floor(Math.random() * 101); // 0 to 100
+            $('#title').css('font-size', randomSize + 'px');
+
+            // 5. Add a new list item
+            $('aside ol').append('<li>New list item added!</li>');
+
+            // 6. Empty aside and add apology paragraph
+            $('aside').empty().append('<p>Sorry for the silly list!</p>');
+
+            // 7. Change background color based on input values
+            $('input').on('input', function () {
+                const red = $('input').eq(0).val();
+                const blue = $('input').eq(1).val();
+                const green = $('input').eq(2).val();
+                $('body').css('background-color', `rgb(${red}, ${green}, ${blue})`);
+            });
+
+            // 8. Remove image on click
+            $('img').on('click', function () {
+                $(this).remove();
+            });
+
+            // **Part Two - Movies App!**
+
+            // Handle form submission
+            $('#movie-form').submit(function (event) {
+                event.preventDefault(); // Prevent form from submitting normally
+
+                // Get input values
+                let title = $('#title').val().trim();
+                let rating = $('#rating').val().trim();
+
+                // Validate inputs
+                if (title === "" || rating === "") {
+                    alert("Please enter both a title and a rating.");
+                    return;
+                }
+
+                // Create a new div for the movie entry
+                let movieDiv = $('<div>').addClass('d-flex justify-content-between align-items-center');
+                let movieInfo = $('<span>').text(`${title} - Rating: ${rating}`);
+                let removeBtn = $('<button>').addClass('btn btn-danger btn-sm').text('Remove');
+
+                // Add click event to remove button
+                removeBtn.click(function () {
+                    $(this).parent().remove();
+                });
+
+                // Append info and button to the movie div
+                movieDiv.append(movieInfo).append(removeBtn);
+
+                // Append the movie div to the movies list
+                $('#movies-list').append(movieDiv);
+
+                // Reset the form fields
+                this.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>
