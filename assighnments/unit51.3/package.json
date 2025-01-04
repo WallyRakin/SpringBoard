@@ -1,0 +1,18 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "guessing-game.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest-mock-random": "^1.0.2"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
