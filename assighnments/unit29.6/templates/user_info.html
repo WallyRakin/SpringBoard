@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}
+User Authentication
+{% endblock %}
+{% block header %}
+<div>
+  <p class="h1">User Page</p>
+</div>
+{% endblock %}
+{% block content %}
+<div>
+
+  {% block messages %}
+  {% endblock %}
+  {% if user.created_feedback %}
+  <div>
+    {% for item in user.created_feedback %}
+    <div>
+      <div>{{item.title|truncate(64,true,'...')}}</div>
+      <div>{{item.content|truncate(128,true,'...')}}</div>
+    </div>
+    <form id="user-login-form" action="/feedback/{{item.id}}/update" method="GET">
+      <div role="group" aria-label="Controls">
+        <button type="submit">
+          Edit
+        </button>
+    </form>
+    <form id="user-login-form" action="/feedback/{{item.id}}/delete" method="POST">
+      <button type="submit" onclick="location.href='/feedback/{{item.id}}/delete'">
+        Delete
+      </button>
+  </div>
+  </form>
+  <hr class="my-4">
+  {% endfor %}
+</div>
+{% endif %}
+<div>
+  <button type="submit" onclick="location.href='/users/{{user.username}}/feedback/add'">
+    Add Feedback
+  </button>
+  <button type="submit" onclick="location.href='/logout'">
+    Logout
+  </button>
+</div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}

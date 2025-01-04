@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+User Authentication
+{% endblock %}
+{% block header %}
+<div>
+  <p class="h1">Add Feedback</p>
+</div>
+{% endblock %}
+{% block content %}
+
+{% block messages %}
+{% endblock %}
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>Title<br /><textarea cols="60" name="title" rows="2"></textarea><br />
+  <p>Content<br /><textarea cols="60" name="content" rows="10"></textarea><br />
+    <button type="submit" formaction="/users/{{username}}/feedback/add">
+      Add Feedback
+    </button>
+    <button type="button" onclick="window.location.href='/users/{{username}}'">
+      Back
+    </button>
+</form>
+<button type="submit" onclick="location.href='/logout'">
+  Logout
+</button>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}

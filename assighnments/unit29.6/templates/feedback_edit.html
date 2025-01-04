@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+User Authentication
+{% endblock %}
+{% block header %}
+<div>
+  <p class="h1">Edit Feedback</p>
+</div>
+{% endblock %}
+{% block content %}
+
+{% block messages %}
+{% endblock %}
+{% if feedback %}
+<form method="POST">
+  {% if form %}{{ form.hidden_tag() }}{% endif %}
+  <p>Title<br />
+    <textarea cols="60" name="title" rows="2">
+        {% if not feedback.title %}{{form.title}}{% else %}{{feedback.title}}{% endif %}
+      </textarea>
+    <br />
+  <p>
+    Content<br />
+    <textarea cols="60" name="content" rows="10">
+        {% if not feedback.content %}{{form.content}}{% else %}{{feedback.content}}{% endif %}
+      </textarea>
+    <br />
+    <button type="submit" formaction="/feedback/{{feedback.id}}/update">
+      Save
+    </button>
+    <button type="submit" formaction="/feedback/{{feedback.id}}/delete">
+      Delete
+    </button>
+    <button type="button" onclick="window.location.href='/users/{{feedback.username.username}}'">
+      Back
+    </button>
+</form>
+{% endif %}
+<button type="submit" onclick="location.href='/logout'">
+  Logout
+</button>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}

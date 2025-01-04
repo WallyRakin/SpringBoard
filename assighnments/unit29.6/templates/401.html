@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Not Authorized!
+{% endblock %}
+{% block header %}
+<div>
+  <p>{{user.username}}, this action has been logged!</p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div>
+
+  {% block messages %}
+  {% endblock %}
+
+  <div>
+    {% if user %}
+    <button type="submit" onclick="location.href='/users/{{user.username}}'">
+      {{user.username}}
+    </button>
+    {% else %}
+    <button type="submit" onclick="location.href='/register'">
+      Register
+    </button>
+    <button type="submit" onclick="location.href='/login'">
+      Login
+    </button>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}

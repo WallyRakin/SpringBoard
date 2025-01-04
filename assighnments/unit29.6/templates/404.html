@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+404 Not Found!
+{% endblock %}
+{% block header %}
+<div>
+  <p>User Auth</p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div>
+
+  {% block messages %}
+  {% endblock %}
+
+  <div>
+    <button type="submit" onclick="location.href='/register'">
+      Register
+    </button>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}

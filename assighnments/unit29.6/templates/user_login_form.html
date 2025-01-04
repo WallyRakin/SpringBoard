@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+User Login Form
+{% endblock %}
+{% block header %}
+<div>
+  <p class="h1">User Login</p>
+</div>
+{% endblock %}
+
+{% block messages %}
+{% endblock %}
+
+{% block content %}
+<form id="user-login-form" action="/login" method="POST">
+  {% if form %}{{ form.hidden_tag() }}{% endif %}
+  <div>
+    {{ form.username.label }} {{ form.username }}
+    {% for error in form.username.errors %}
+    <span>[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  <div>
+    {{ form.password.label }} {{ form.password }}
+    {% for error in form.password.errors %}
+    <span>[{{ error }}]</span>
+    {% endfor %}
+  </div>
+  <div>
+    {{ form.submit() }}
+  </div>
+</form>
+<button type="submit" onclick="location.href='/register'">
+  Register
+</button>
+</div>
+{% endblock %}
+{% block javascript %}
+{{ super() }}
+{% endblock %}
