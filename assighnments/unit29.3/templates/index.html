@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+CUPCAKES
+{% endblock %}
+{% block header %}
+<div class="d-flex flex-wrap gap-3 mx-auto" style="width: 480px;">
+<p class="h1">CUPCAKES</p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="cupcakes" class="d-flex flex-wrap gap-3 mx-auto" style="width:
+480px;">
+
+{% block messages %}
+{% endblock %}
+
+</div>
+<br/>
+<div id="cupcakesForm" class="d-flex flex-wrap gap-3 mx-auto" style="width:
+480px;">
+</div>
+<div id="cupcakesButton" class="d-flex flex-wrap gap-3 mx-auto" style="width:
+480px;">
+	<br/>
+  <button id="subloadbtn" type="submit" class="btn btn-primary"
+		  onclick="loadForm();">
+    Add a Cupcake
+  </button>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+{% endblock %}
