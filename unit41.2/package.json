@@ -1,0 +1,34 @@
+{
+  "name": "express-json-validation",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Blinter",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0",
+    "jsonschema": "^1.4.1",
+    "locus": "^2.0.4",
+    "pg": "^8.13.0"
+  },
+  "description": "## **Express Bookstore**",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blinter/Express-JSON-Validation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Blinter/Express-JSON-Validation/issues"
+  },
+  "homepage": "https://github.com/Blinter/Express-JSON-Validation#readme"
+}

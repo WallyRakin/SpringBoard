@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Book Patch Schema",
+    "properties": {
+      "amazon_url": {
+        "type": "string"
+      },
+      "author": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "pages": {
+        "type": "integer"
+      },
+      "publisher": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "year": {
+        "type": "integer"
+      }
+    },
+    "additionalProperties": false
+  }
